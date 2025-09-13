@@ -1,0 +1,105 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+out/
+.storybook-out/
+storybook-static/
+
+# Caches
+.cache/
+.parcel-cache/
+.turbo/
+.nx/cache/
+.eslintcache
+.stylelintcache
+vite.config.timestamp-* # occasional Vite cache stamps
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Test artifacts
+coverage/
+cypress/videos/
+cypress/screenshots/
+playwright-report/
+test-results/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment files
+#.env
+#.env.*
+#!.env.example
+
+# Editors/OS
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.sw?
+*.swo
+*.swp
+```// filepath: /home/luffy/anime-talks/anitalks-project/.gitignore
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+out/
+.storybook-out/
+storybook-static/
+
+# Caches
+.cache/
+.parcel-cache/
+.turbo/
+.nx/cache/
+.eslintcache
+.stylelintcache
+vite.config.timestamp-* # occasional Vite cache stamps
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Test artifacts
+coverage/
+cypress/videos/
+cypress/screenshots/
+playwright-report/
+test-results/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment files
+#.env
+#.env.*
+#!.env.example
+
+# Editors/OS
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+
+
+
+removed_features

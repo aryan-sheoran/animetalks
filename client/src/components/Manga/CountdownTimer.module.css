@@ -1,0 +1,38 @@
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.countdownItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  min-width: 100px;
+}
+
+.countdownNumber {
+  font-size: 2em;
+  font-weight: bold;
+  color: #f39c12;
+}
+
+.countdownLabel {
+  font-size: 0.8em;
+  color: #8b949e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .countdown {
+    flex-wrap: wrap;
+  }
+
+  .countdownItem {
+    min-width: 80px;
+  }
+}

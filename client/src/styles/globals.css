@@ -1,0 +1,246 @@
+/* Global Styles - Enhanced for Modular CSS System */
+
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* Global CSS Variables */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-strong: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-strong: rgba(255, 255, 255, 0.25);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --glass-shadow-strong: 0 15px 35px rgba(31, 38, 135, 0.4);
+  --glass-blur: blur(10px);
+  --glass-blur-light: blur(5px);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(45deg, #dc143c, #ff4d6d);
+  --gradient-secondary: linear-gradient(
+    45deg,
+    rgba(106, 17, 203, 0.4),
+    rgba(37, 117, 252, 0.4)
+  );
+  --gradient-auth: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+
+  /* Colors */
+  --primary-color: #8a2be2;
+  --secondary-color: #2575fc;
+  --accent-color: #dc143c;
+  --text-color: #e6edf3;
+  --text-muted: rgba(201, 209, 217, 0.8);
+  --text-light: rgba(255, 255, 255, 0.8);
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  /* Background colors */
+  --bg-dark: #0d1117;
+  --bg-darker: #161b22;
+  --bg-intro: linear-gradient(135deg, #1a1314 0%, #3f1b1b 100%);
+  --bg-home: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+  --bg-auth: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  background: var(--bg-dark);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Ensure consistent font loading */
+body.intro-page {
+  font-family: "Inter", sans-serif;
+}
+
+body.auth-page {
+  font-family: "Poppins", sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Global utilities for smooth scrolling */
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Global link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Global button reset */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Global input reset */
+input {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Menu toggle - Global styles for auth2 compatibility */
+.menu-icon-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.menu-icon-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+  .menu-icon-toggle {
+    display: flex;
+  }
+}
+
+/* Loading animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Global utility classes */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--accent-color);
+  color: white;
+}
+
+/* Global responsive font scaling */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+}

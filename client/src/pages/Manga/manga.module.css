@@ -1,0 +1,109 @@
+.mangaRoot {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #101820;
+  color: white;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.comingSoon {
+  flex: 1;
+  margin-left: 240px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba(106, 17, 203, 0.1),
+    rgba(37, 117, 252, 0.1)
+  );
+}
+
+.content {
+  text-align: center;
+  max-width: 800px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.content h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #e6edf3;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+  gap: 20px;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.backButton i {
+  margin-right: 8px;
+}
+
+.backButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .comingSoon {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+  }
+
+  .content h1 {
+    font-size: 2em;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
