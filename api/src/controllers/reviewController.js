@@ -45,7 +45,6 @@ exports.createReview = async (req, res) => {
     const savedReview = await newReview.save();
     res.status(201).json(savedReview);
   } catch (error) {
-    console.error('Error creating review:', error);
     // Handle duplicate key error from DB-level unique index if it happens
     if (error && error.code === 11000) {
       return res.status(400).json({ message: 'A review for this episode by you already exists.' });
@@ -62,7 +61,6 @@ exports.getMyReviews = async (req, res) => {
     const reviews = await Review.find({ user: req.user.id }).sort({ createdAt: -1 });
     res.json(reviews);
   } catch (error) {
-    console.error('Error fetching user reviews:', error);
     res.status(500).json({ message: 'Server error while fetching reviews.' });
   }
 };
@@ -75,7 +73,6 @@ exports.getReviewsForAnime = async (req, res) => {
     const reviews = await Review.find({ animeId: req.params.animeId }).populate('user', 'username').sort({ createdAt: -1 });
     res.json(reviews);
   } catch (error) {
-    console.error('Error fetching anime reviews:', error);
     res.status(500).json({ message: 'Server error while fetching reviews.' });
   }
 };
@@ -92,7 +89,6 @@ exports.getReviewsForSeason = async (req, res) => {
     }).populate('user', 'username').sort({ createdAt: -1 });
     res.json(reviews);
   } catch (error) {
-    console.error('Error fetching season reviews:', error);
     res.status(500).json({ message: 'Server error while fetching season reviews.' });
   }
 };
@@ -110,7 +106,6 @@ exports.getReviewsForEpisode = async (req, res) => {
     }).populate('user', 'username').sort({ createdAt: -1 });
     res.json(reviews);
   } catch (error) {
-    console.error('Error fetching episode reviews:', error);
     res.status(500).json({ message: 'Server error while fetching episode reviews.' });
   }
 };

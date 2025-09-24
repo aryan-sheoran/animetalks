@@ -8,7 +8,6 @@ exports.getHomeItems = async (req, res) => {
     const items = await HomeItem.find({}).populate('show');
     res.status(200).json(items);
   } catch (err) {
-    console.error('[homeController] Failed to fetch home items:', err.message || err);
     res.status(500).json({ message: 'Server Error' });
   }
 };
@@ -23,7 +22,6 @@ exports.getHomeItemById = async (req, res) => {
     }
     res.status(200).json(item);
   } catch (err) {
-    console.error('[homeController] Failed to fetch home item by id:', err.message || err);
     res.status(500).json({ message: 'Server Error' });
   }
 };

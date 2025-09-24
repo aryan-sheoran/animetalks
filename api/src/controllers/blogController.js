@@ -11,7 +11,6 @@ exports.getUserBlogs = async (req, res) => {
 
         res.json(blogs);
     } catch (error) {
-        console.error('Error fetching user blogs:', error);
         res.status(500).json({ message: 'Server error' });
     }
 };
@@ -37,7 +36,6 @@ exports.getAllBlogs = async (req, res) => {
             total
         });
     } catch (error) {
-        console.error('Error fetching blogs:', error);
         res.status(500).json({ message: 'Server error' });
     }
 };
@@ -67,7 +65,6 @@ exports.createBlog = async (req, res) => {
 
         res.status(201).json(blog);
     } catch (error) {
-        console.error('Error creating blog:', error);
         res.status(500).json({ message: 'Server error' });
     }
 };
@@ -95,7 +92,6 @@ exports.updateBlog = async (req, res) => {
 
         res.json(blog);
     } catch (error) {
-        console.error('Error updating blog:', error);
         res.status(500).json({ message: 'Server error' });
     }
 };
@@ -113,7 +109,6 @@ exports.deleteBlog = async (req, res) => {
 
         res.json({ message: 'Blog deleted successfully' });
     } catch (error) {
-        console.error('Error deleting blog:', error);
         res.status(500).json({ message: 'Server error' });
     }
 };
@@ -146,7 +141,6 @@ exports.toggleLike = async (req, res) => {
 
         res.json(blog);
     } catch (error) {
-        console.error('Error toggling like:', error);
         res.status(500).json({ message: 'Server error' });
     }
 };
@@ -178,7 +172,6 @@ exports.addComment = async (req, res) => {
 
         res.json(blog);
     } catch (error) {
-        console.error('Error adding comment:', error);
         res.status(500).json({ message: 'Server error' });
     }
 };

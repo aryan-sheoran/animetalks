@@ -402,7 +402,7 @@ const Intro = () => {
         <div className={`${styles.loadingOverlay} ${isHiding ? styles.hiding : ''}`}>
           <div className={styles.loadingContent}>
             <h1 className={`${styles.loadingLogo} ${glassStyles.gradientText}`}>
-              AniTalks
+              AnimeTalks
             </h1>
             <div className={styles.loadingBar}>
               <div className={styles.loadingProgress}></div>
@@ -414,7 +414,7 @@ const Intro = () => {
 
       {/* Navigation */}
       <nav className={styles.navbar}>
-        <div className={`${styles.logo} ${glassStyles.gradientText}`}>ANITALKS</div>
+        <div className={`${styles.logo} ${glassStyles.gradientText}`}>ANIMETALKS</div>
         <a 
           href="#auth-section" 
           className={`${styles.getStarted} ${glassStyles.gradientButton}`}
@@ -473,11 +473,13 @@ const Intro = () => {
               <h3 className={styles.featureTitle}>Give Your Reviews</h3>
               <p className={styles.featureDescription}>Share your thoughts and rate your favorite anime series with detailed reviews and scores.</p>
             </div>
+            {false && (
             <div className={`${styles.featureCard} ${glassStyles.glassCard}`}>
               <div className={styles.featureIcon}>💬</div>
               <h3 className={styles.featureTitle}>Join Community</h3>
               <p className={styles.featureDescription}>Connect with fellow anime lovers, discuss episodes, and participate in engaging discussions.</p>
             </div>
+            )}
             <div className={`${styles.featureCard} ${glassStyles.glassCard}`}>
               <div className={styles.featureIcon}>🎬</div>
               <h3 className={styles.featureTitle}>Make new Friends</h3>
@@ -493,11 +495,13 @@ const Intro = () => {
               <h3 className={styles.featureTitle}>Track Your Reviews</h3>
               <p className={styles.featureDescription}>Keep track of all your anime reviews, ratings, and watching progress in one organized place.</p>
             </div>
+            {false && (
             <div className={`${styles.featureCard} ${glassStyles.glassCard}`}>
               <div className={styles.featureIcon}>🌐</div>
               <h3 className={styles.featureTitle}>Chat Globally</h3>
               <p className={styles.featureDescription}>Connect with anime fans worldwide through our real-time global chat system and make friends across borders.</p>
             </div>
+            )}
           </div>
         </div>
       </section>
@@ -549,6 +553,7 @@ const Intro = () => {
       </section>
 
       {/* Footer Section */}
+      {false && (
       <footer className={`${styles.footer} ${glassStyles.glassCardStrong}`}>
         <div className={styles.footerContent}>
           <div className={styles.footerGrid}>
@@ -602,6 +607,7 @@ const Intro = () => {
           </div>
         </div>
       </footer>
+      )}
     </div>
   );
 };

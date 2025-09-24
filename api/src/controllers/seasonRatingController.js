@@ -58,7 +58,6 @@ exports.createOrUpdateSeasonRating = async (req, res) => {
 
     res.status(200).json(seasonRating);
   } catch (error) {
-    console.error('Error creating/updating season rating:', error);
     res.status(500).json({ message: 'Server error while saving season rating.' });
   }
 };
@@ -83,7 +82,6 @@ exports.getShowSeasonRatings = async (req, res) => {
 
     res.json(ratings);
   } catch (error) {
-    console.error('Error fetching show season ratings:', error);
     res.status(500).json({ message: 'Server error while fetching ratings.' });
   }
 };
@@ -101,7 +99,6 @@ exports.getUserSeasonRatings = async (req, res) => {
 
     res.json(ratings);
   } catch (error) {
-    console.error('Error fetching user season ratings:', error);
     res.status(500).json({ message: 'Server error while fetching user ratings.' });
   }
 };
@@ -117,7 +114,6 @@ exports.getMySeasonRatings = async (req, res) => {
 
     res.json(ratings);
   } catch (error) {
-    console.error('Error fetching my season ratings:', error);
     res.status(500).json({ message: 'Server error while fetching ratings.' });
   }
 };
@@ -142,7 +138,6 @@ exports.deleteSeasonRating = async (req, res) => {
     await SeasonRating.findByIdAndDelete(id);
     res.json({ message: 'Rating deleted successfully.' });
   } catch (error) {
-    console.error('Error deleting season rating:', error);
     res.status(500).json({ message: 'Server error while deleting rating.' });
   }
 };

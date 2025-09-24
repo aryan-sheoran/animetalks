@@ -12,7 +12,6 @@ exports.getProfile = async (req, res) => {
 
         res.json(user);
     } catch (error) {
-        console.error('Error in getProfile:', error);
         res.status(500).json({ message: 'Server error' });
     }
 };
@@ -21,9 +20,6 @@ exports.getProfile = async (req, res) => {
 exports.updateProfile = async (req, res) => {
     try {
         const { username, bio, location, favoriteAnime } = req.body;
-        
-        // DEBUG: Log what we received
-        console.log('Received update data:', { username, bio, location, favoriteAnime });
         
         // If username is being updated, check if it's already taken by another user
         if (username !== undefined) {
@@ -47,9 +43,6 @@ exports.updateProfile = async (req, res) => {
         if (location !== undefined) updateData.location = location;
         if (favoriteAnime !== undefined) updateData.favoriteAnime = favoriteAnime;
         
-        // DEBUG: Log update data
-        console.log('Update data to be sent to MongoDB:', updateData);
-        
         const user = await User.findByIdAndUpdate(
             req.user.id,
             updateData,
@@ -60,12 +53,8 @@ exports.updateProfile = async (req, res) => {
             return res.status(404).json({ message: 'User not found' });
         }
         
-        // DEBUG: Log updated user
-        console.log('Updated user data:', user);
-        
         res.json(user);
     } catch (error) {
-        console.error('Error in updateProfile:', error);
         
         // Handle MongoDB duplicate key errors
         if (error.code === 11000) {
@@ -99,7 +88,6 @@ exports.getUserById = async (req, res) => {
 
         res.json(user);
     } catch (err) {
-        console.error('Error in getUserById:', err);
         res.status(500).json({ message: 'Server error' });
     }
 };

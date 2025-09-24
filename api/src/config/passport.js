@@ -28,7 +28,6 @@ passport.use('signup', new LocalStrategy({
         
         return done(null, user);
     } catch (err) {
-        console.error('Error during signup:', err);
         return done(err);
     }
 }));

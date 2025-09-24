@@ -4,7 +4,6 @@ const { generateToken } = require('../utils/jwt');
 const signup = (req, res, next) => {
     passport.authenticate('signup', { session: false }, (err, user, info) => {
         if (err) {
-            console.error('Signup error:', err);
             // Handle Mongoose validation errors specifically
             if (err.name === 'ValidationError') {
                 const messages = Object.values(err.errors).map(e => e.message);
@@ -13,7 +12,6 @@ const signup = (req, res, next) => {
             return res.status(500).json({ message: 'Server error', error: err.message });
         }
         if (!user) {
-            console.log('Signup failed:', info);
             return res.status(400).json({ message: info.message || 'Signup failed' });
         }
         
@@ -26,7 +24,6 @@ const signup = (req, res, next) => {
                 token
             });
         } catch (tokenError) {
-            console.error('Token generation error:', tokenError);
             return res.status(500).json({ message: 'Token generation failed', error: tokenError.message });
         }
     })(req, res, next);
@@ -35,11 +32,9 @@ const signup = (req, res, next) => {
 const login = (req, res, next) => {
     passport.authenticate('login', { session: false }, (err, user, info) => {
         if (err) {
-            console.error('Login error:', err);
             return res.status(500).json({ message: 'Server error', error: err.message });
         }
         if (!user) {
-            console.log('Login failed:', info);
             return res.status(401).json({ message: info.message || 'Login failed' });
         }
         
@@ -52,7 +47,6 @@ const login = (req, res, next) => {
                 token
             });
         } catch (tokenError) {
-            console.error('Token generation error:', tokenError);
             return res.status(500).json({ message: 'Token generation failed', error: tokenError.message });
         }
     })(req, res, next);
