@@ -80,7 +80,7 @@ const Sidebar = () => {
 
       <div className={`${styles.sidebar} ${isActive ? styles.active : ''}`}>
         <div className={styles.logo}>
-          <span style={{ color: 'white' }}>ANI</span>TALKS
+          <span style={{ color: 'white' }}>ANI</span>DB
         </div>
 
         <div className={styles.menu}>

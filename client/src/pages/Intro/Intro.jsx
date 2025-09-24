@@ -402,7 +402,7 @@ const Intro = () => {
         <div className={`${styles.loadingOverlay} ${isHiding ? styles.hiding : ''}`}>
           <div className={styles.loadingContent}>
             <h1 className={`${styles.loadingLogo} ${glassStyles.gradientText}`}>
-              AnimeTalks
+              AnimeDB
             </h1>
             <div className={styles.loadingBar}>
               <div className={styles.loadingProgress}></div>
@@ -414,7 +414,7 @@ const Intro = () => {
 
       {/* Navigation */}
       <nav className={styles.navbar}>
-        <div className={`${styles.logo} ${glassStyles.gradientText}`}>ANIMETALKS</div>
+        <div className={`${styles.logo} ${glassStyles.gradientText}`}>ANIMEDB</div>
         <a 
           href="#auth-section" 
           className={`${styles.getStarted} ${glassStyles.gradientButton}`}
