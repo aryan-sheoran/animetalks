@@ -435,7 +435,6 @@ const Intro = () => {
             Join the Ultimate Animeverse – Talk, Rate, Belong.<br />Your Gateway to the Anime World – Chat, Rate, Relate.
           </p>
           <div className={styles.heroButtons}>
-            <Link to="/app/home" className={`${styles.browseBtn} ${glassStyles.gradientButton}`}>Browse Reviews</Link>
             <span 
               className={`${styles.knowMore} ${glassStyles.glassButton}`}
               onClick={handleGetStartedClick}
